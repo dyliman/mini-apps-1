@@ -3,6 +3,10 @@
 	justify-content:space-around;
 }
 
-.firstname .lastname .county .city .role .sales {
-	border: 1 solid black;
+.firstname, .lastname, .county, .city, .role, .sales {
+	color: blue;
+}
+
+.form {
+	
 }

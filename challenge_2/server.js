@@ -38,6 +38,7 @@ app.post('/', function(req, res) {
 		}
 	}
 	recurObject(body);
+	returnObj['csv'] = handleCSV(returnObj);
 
     res.status(201).send(returnObj);
 });
@@ -45,3 +46,21 @@ app.post('/', function(req, res) {
 app.listen(3000, () => {
   console.log(`listening on port 3000`);
 });
+
+
+var handleCSV = function(body) {
+	var csv = [];
+		for(var i = 0; i < body.firstName.length; i++){
+			var current = [];
+				current.push(body.firstName[i]);
+				current.push(body.lastName[i]);
+				current.push(body.county[i]);
+				current.push(body.city[i]);
+				current.push(body.role[i]);
+				current.push(body.sales[i]);
+			csv.push(current);
+		}
+	csv = csv.join('\n')
+	return csv
+}
+

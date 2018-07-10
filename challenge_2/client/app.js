@@ -33,6 +33,7 @@ $(document).ready(function(){
 			$('.role').append(`<div>${data.role[i]}</div>`)
 			$('.sales').append(`<div>${data.sales[i]}</div>`)
 		}
+		$('.csv').val('firstName,lastName,county,city,role,sales \n' + data.csv)
 	}
 
 })
