@@ -1,0 +1,8 @@
+.displayData {
+	display: flex;
+	justify-content:space-around;
+}
+
+.firstname .lastname .county .city .role .sales {
+	border: 1 solid black;
+}
