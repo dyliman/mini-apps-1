@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			//do nothing, checks if move is valid
 		} else if(this.currentTurn){
 			event.target.innerHTML = "X";
+			event.target.classList.add('X')
 			this.currentTurn = !this.currentTurn;
 
 			if(elementClassName === 'row1'){
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		} else if (!this.currentTurn){
 			event.target.innerHTML = "O";
+			event.target.classList.add('O')
 			this.currentTurn = !this.currentTurn;
 
 			if(elementClassName === 'row1'){
@@ -80,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		var elements = document.querySelectorAll('.cell')
 		for(var i = 0; i < elements.length; i++){
 			elements[i].innerHTML = '';
+			elements[i].classList.remove('X')
+			elements[i].classList.remove('O')
 		}
 		this.init();
 	}
@@ -107,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.playerOneScore += 1
 			this.handleWin(this.playerOne)
 		} else if(this.moves === 9){
-			alert("TIE!")
+			setTimeout(() => alert("TIE!"), 10)
 		}
 	}
 
@@ -115,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		setTimeout(() => {alert(`The Winner Is: ${winner}!!`)} , 10)
 		document.getElementsByClassName('player1')[0].innerHTML = `${this.playerOne} X: ${this.playerOneScore}`
 		document.getElementsByClassName('player2')[0].innerHTML = `${this.playerTwo} O: ${this.playerTwoScore}`
+		this.fullBoard = new Array(3).fill(7);
 	}
 
 	Game.prototype.players = function(){
