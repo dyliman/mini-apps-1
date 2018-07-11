@@ -25,15 +25,13 @@ $(document).ready(function(){
 	})
 
 	var handleData = function(data){
-		for(var i = 0; i < data.firstName.length; i++){
-			$('.firstname').append(`<div>${data.firstName[i]}</div>`)
-			$('.lastname').append(`<div>${data.lastName[i]}</div>`)
-			$('.county').append(`<div>${data.county[i]}</div>`)
-			$('.city').append(`<div>${data.city[i]}</div>`)
-			$('.role').append(`<div>${data.role[i]}</div>`)
-			$('.sales').append(`<div>${data.sales[i]}</div>`)
+		var items = ['firstName','lastName','county','city','role','sales']
+		for(var i = 0; i < items.length; i++){
+			for(var j = 0; j < data.firstName.length; j++){
+				$(`.${items[i]}`).append(`<div>${data[items[i]][j]}</div>`)
+			}
 		}
-		$('.csv').val('firstName,lastName,county,city,role,sales \n' + data.csv)
+		$('.csv').val('firstName,lastName,county,city,role,sales\n' + data.csv)
 	}
 
 })
