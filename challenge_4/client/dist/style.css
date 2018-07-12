@@ -1,0 +1,15 @@
+.board {
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+}
+
+.column {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
