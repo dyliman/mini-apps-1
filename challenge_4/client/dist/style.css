@@ -9,7 +9,28 @@
 }
 
 .column {
+	background-color: black;
 	display: flex;
 	justify-content: center;
-	flex-direction: column;
+	flex-direction: column-reverse;
+}
+
+.column:hover{
+	background-color: yellow;
+}
+
+.element {
+	margin: 5px;
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.true {
+	background-color: red;
+}
+
+.false {
+	background-color: blue;
 }
