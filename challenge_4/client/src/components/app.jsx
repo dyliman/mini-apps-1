@@ -110,7 +110,6 @@ export class App extends React.Component {
 		}
 
 		var win = recurCheck()
-		console.log(win)
 
 		if(win !== 'no win'){
 			if(win === true){
@@ -122,6 +121,19 @@ export class App extends React.Component {
 		} else if(this.state.moves >= this.boardCapacity){
 			alert('Tie!')
 		}
+	}
+
+	handleReset(){
+		this.state.board = this.generateBoard(this.height,this.width);
+		this.state.turn = true
+		this.state[0] = 0;
+		this.state[1] = 0;
+		this.state[2] = 0;
+		this.state[3] = 0;
+		this.state[4] = 0;
+		this.state[5] = 0;
+		this.state[6] = 0;
+		this.setState({moves: 0})
 	}
 
 	columnTemplate(item, index){
@@ -148,6 +160,7 @@ export class App extends React.Component {
 		    <div className = 'board'>
 		    {this.state.board.map((element,index) => (this.boardTemplate(element,index)))}
 		    </div>
+		    <button onClick={this.handleReset.bind(this)}>Reset Game</button>
 		  </div>
 		);
 	}
