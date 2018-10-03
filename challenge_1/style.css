@@ -74,11 +74,13 @@ header{
 
 .X {
 	color: red;
+	text-shadow: 3px 2px blue;
 	font-weight: bold;
 }
 
 .O{
 	color: blue;
+	text-shadow: 3px 2px red;
 	font-weight: bold;
 }
 

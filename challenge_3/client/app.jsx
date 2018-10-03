@@ -102,7 +102,7 @@ class UserInformation extends React.Component {
 
   render() {
   	return (
-  		<form onSubmit={this.handleFormSubmit}>
+  		<form className='form' onSubmit={this.handleFormSubmit}>
 			  <div>
 			    <label>Name:</label>
 			    <input type="text" onChange={this.props.change} name='name'></input>
@@ -113,7 +113,7 @@ class UserInformation extends React.Component {
 			  </div>
 			  <div>
 			    <label>Password:</label>
-			    <input type="text" onChange={this.props.change} name='password'></input>
+			    <input type="password" onChange={this.props.change} name='password'></input>
 			  </div>
 			  <div>
 			  	<input type="submit" value="Next"></input>
@@ -136,7 +136,7 @@ class ShiptTo extends React.Component {
 
   render() {
   	return (
-  		<form onSubmit={this.handleFormSubmit}>
+  		<form className='form' onSubmit={this.handleFormSubmit}>
 			  <div>
 			    <label>Address 1:</label>
 			    <input type="text" onChange={this.props.change} name='address1'></input>
@@ -186,7 +186,7 @@ class CreditCard extends React.Component {
 
   render() {
   	return (
-  		<form onSubmit={this.handleFormSubmit}>
+  		<form className='form' onSubmit={this.handleFormSubmit}>
 			  <div>
 			    <label>Credit Card Number:</label>
 			    <input type="text" onChange={this.props.change} name='ccNum'></input>
@@ -246,9 +246,9 @@ class Confirmation extends React.Component {
 
   render() {
   	return(
-  		<form onSubmit={this.purchaseClicked.bind(this)}>
+  		<form className='form' onSubmit={this.purchaseClicked.bind(this)}>
 			  <div className='confirmation'>
-			  	<h1>Please confirm your information!</h1>
+			  	<h2>Please confirm your information!</h2>
 			  	<span>
 			  	Name: {this.props.info.name}
 			  	</span>

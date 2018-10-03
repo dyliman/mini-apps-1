@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.getElementsByClassName('player2')[0].innerHTML = `${this.playerTwo} O: ${this.playerTwoScore}`
 	}
 
-currentGame = new Game;
+var currentGame = new Game;
 currentGame.init();
 currentGame.players();
 

@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 
 })
 
-app.post('/', function(req, res) {
+app.post('/', function(req, res) {m
 	var body = JSON.parse(req.body.text)
 	var returnObj = {}
 	var items = ['firstName','lastName','county','city','role','sales']
